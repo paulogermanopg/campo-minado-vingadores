@@ -5,7 +5,7 @@ import LevelSelection from './screens/LevelSelection'
 import Header from './components/Header'
 import params from './params'
 import MineField from './components/MineField'
-import { createMineBoard, clonedBoard, openField, hadExplosion, wonGam, showMines, wonGame, invertFlag, flagsUsed } from './functions'
+import { createMineBoard, clonedBoard, openField, hadExplosion, wonGam, showMines, wonGame, invertFlag, flagsUsed, joia, wonGameByJoia } from './functions'
 
 export default class App extends Component {
 
@@ -53,10 +53,15 @@ export default class App extends Component {
     const board = clonedBoard(this.state.board)
     invertFlag(board, row, column)
     const won = wonGame(board)
+    joia(board, row, column)
+    // const wonJ = wonGameByJoia(board)
 
     if (won) {
       Alert.alert('Parabéns!', 'Você venceu!')
     }
+    // if (wonJ) {
+    //   Alert.alert('Parabéns!', 'Você venceu!')
+    // }
 
     this.setState({ board, won })
   }

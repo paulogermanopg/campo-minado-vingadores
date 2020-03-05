@@ -10,7 +10,8 @@ const createBoeard = (rows, columns) => {
                 flagged: false,
                 mined: false,
                 exploded: false,
-                nearMines: 0
+                nearMines: 0,
+                joia: false,
             }
         })
     })
@@ -88,6 +89,7 @@ const hadExplosion = board => fields(board)
 .filter(field => field.exploded).length > 0
 const pendding = field => (field.mined && !field.flagged) || (!field.mined && !field.opened)
 const wonGame = board => fields(board).filter(pendding).length === 0
+const wonGameByJoia = board => fields(board).filter(pendding).length === 0
 const showMines = board => fields(board).filter(field => field.mined)
     .forEach(field => field.opened = true)
 
@@ -95,6 +97,19 @@ const invertFlag = (board, row, column) => {
     const field = board[row][column]
     field.flagged = !field.flagged
 }
+
+const joia = (board, row, column) => {
+    const field = board[row][column]
+    if (field.opened) {
+        const neighbors = getNeighbors(board, row, column)
+        field.nearMines = neighbors.filter(n => n.mined).length
+        if (field.nearMines > 0){
+            field.joia = !field.joia
+        }
+    }
+}
+
+const joiasUsed = board => fields(board).filter(field => field.flagged).length
 
 const flagsUsed = board => fields(board).filter(field => field.flagged).length
 
@@ -107,4 +122,6 @@ export {
     showMines,
     invertFlag,
     flagsUsed,
+    joia,
+    wonGameByJoia,
 }

@@ -45,15 +45,15 @@ const styles = StyleSheet.create({
         borderWidth: params.borderSize,
     },
     regular: {
-        backgroundColor: '#999',
-        borderLeftColor: '#CCC',
-        borderTopColor: '#CCC',
-        borderRightColor: '#333',
+        backgroundColor: '#551A8B',
+        borderLeftColor: '#AB82FF',
+        borderTopColor: '#AB82FF',
+        borderRightColor: '#1C1C1C',
         borderBottomColor: '#333',
     },
     opened: {
-        backgroundColor: '#999',
-        borderColor: '#777',
+        backgroundColor: '#551A8B',
+        borderColor: 'black',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -70,8 +70,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     exploded: {
-        backgroundColor: 'black',
-        borderColor: 'black',
+        backgroundColor: '#FFD700',
+        borderColor: '#CDAD00',
     },
     joia: {
         height: 24,

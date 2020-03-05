@@ -95,6 +95,6 @@ const styles = StyleSheet.create({
   },
   board: {
     alignItems: 'center',
-    backgroundColor: '#AAA',
+    backgroundColor: 'black',
   }
 });

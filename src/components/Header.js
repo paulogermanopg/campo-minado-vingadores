@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
-import Flag from './Flag'
+
 
 export default props => {
     return (
@@ -9,10 +9,10 @@ export default props => {
                 <TouchableOpacity onPress={props.onFlagPress} style={styles.flagButton}>
                     <Image style={styles.coreMine} source={require(`../Imagens/logo.png`)} />
                 </TouchableOpacity>
-                <Text style={styles.flagsLeft}>= {props.flagsLeft}</Text>
+                <Text style={styles.flagsLeft}>{props.flagsLeft}</Text>
             </View>
             <TouchableOpacity style={styles.button} onPress={props.onNewGame}>
-                <Text style={styles.buttonLabel}>Novo Jogo</Text>
+                <Text style={styles.buttonLabel}>END GAME</Text>
             </TouchableOpacity>
         </View>
     )
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
     },
     button: {
-        backgroundColor: '#999',
+        backgroundColor: 'black',
         padding: 5,
     },
     coreMine: {

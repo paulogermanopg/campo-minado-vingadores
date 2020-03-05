@@ -11,15 +11,15 @@ export default props => {
                     <Text style={styles.title}>Selecione o Nível</Text>
                     <TouchableOpacity style={[styles.button, styles.bgEasy]}
                         onPress={() => props.onLevelSelected(0.1)}>
-                        <Text style={styles.buttonLabel}>Fácil</Text>
+                        <Text style={styles.buttonLabel}>LOKI</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.button, styles.bgNormal]}
                         onPress={() => props.onLevelSelected(0.2)}>
-                        <Text style={styles.buttonLabel}>Médio</Text>
+                        <Text style={styles.buttonLabel}>ULTRON</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.button, styles.bgHard]}
-                        onPress={() => props.onLevelSelected(0.3)}>
-                        <Text style={styles.buttonLabel}>Difícil</Text>
+                        onPress={() => props.onLevelSelected(0.4)}>
+                        <Text style={styles.buttonLabel}>THANOS</Text>
                     </TouchableOpacity>
                 </View>
             </View>

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, Alert } from 'react-native'
+import { StyleSheet, Text, View, Alert, Modal } from 'react-native'
 
 import LevelSelection from './screens/LevelSelection'
 import Header from './components/Header'
 import params from './params'
+import Final from './components/final'
 import MineField from './components/MineField'
-import { createMineBoard, clonedBoard, openField, hadExplosion, wonGam, showMines, wonGame, invertFlag, flagsUsed, joia, wonGameByJoia } from './functions'
+import { createMineBoard, clonedBoard, openField, hadExplosion, showMines, wonGame, invertFlag, flagsUsed, joia, wonGameByJoia } from './functions'
 
 export default class App extends Component {
 
@@ -28,6 +29,7 @@ export default class App extends Component {
       won: false,
       lost: false,
       showLevelSelection: false,
+      showfinal: false,
     }
   }
 
@@ -39,7 +41,7 @@ export default class App extends Component {
 
     if (lost) {
       showMines(board)
-      Alert.alert('Perdeeeeeuuuuu!', 'AAAAHAAA!')
+      this.setState({ showfinal: true })
     }
 
     if (won) {
@@ -76,6 +78,8 @@ export default class App extends Component {
         <LevelSelection isVisible={this.state.showLevelSelection}
           onLevelSelected={this.onLevelSelected}
           onCancel={() => this.setState({ showLevelSelection: false })} />
+        <Final isVisible={this.state.showfinal}
+          onCancel={() => this.setState({ showfinal: false })} />
         <Header flagsLeft={this.minesAmount() - flagsUsed(this.state.board)}
           onNewGame={() => this.setState(this.createState())} 
           onFlagPress={() => this.setState({ showLevelSelection: true })}/>

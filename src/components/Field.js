@@ -74,10 +74,10 @@ const styles = StyleSheet.create({
         borderColor: '#CDAD00',
     },
     joia: {
-        height: 24,
-        width: 24,
+        height: 34,
+        width: 34,
         borderRadius: 10,
-        backgroundColor: 'black',
+        backgroundColor: '#CDAD00',
         alignItems: 'center',
         justifyContent: 'center',
     }

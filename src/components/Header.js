@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: '#EEE',
+        backgroundColor: '#D3D3D3',
         alignItems: 'center',
         justifyContent: 'space-around',
         paddingTop: 20,
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: 'black',
         padding: 5,
+        borderRadius: 10,
     },
     coreMine: {
         height: 84,

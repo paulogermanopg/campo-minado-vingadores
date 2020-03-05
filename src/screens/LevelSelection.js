@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
        alignItems: 'center',
        justifyContent: 'center',
        padding: 15, 
+       borderRadius: 10,
     },
     title: {
         fontSize: 30,

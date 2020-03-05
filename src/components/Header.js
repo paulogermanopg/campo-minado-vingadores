@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import Flag from './Flag'
 
 export default props => {
@@ -7,7 +7,7 @@ export default props => {
         <View style={styles.container}>
             <View style={styles.flagContainer}>
                 <TouchableOpacity onPress={props.onFlagPress} style={styles.flagButton}>
-                    <Flag bigger />
+                    <Image style={styles.coreMine} source={require(`../Imagens/logo.png`)} />
                 </TouchableOpacity>
                 <Text style={styles.flagsLeft}>= {props.flagsLeft}</Text>
             </View>
@@ -44,6 +44,14 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: '#999',
         padding: 5,
+    },
+    coreMine: {
+        height: 84,
+        width: 84,
+        borderRadius: 10,
+        //backgroundColor: 'black',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     buttonLabel: {
         fontSize: 20,

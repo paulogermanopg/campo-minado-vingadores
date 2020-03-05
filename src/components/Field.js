@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, Text, TouchableWithoutFeedback } from 'react-native'
+import { View, StyleSheet, Text, TouchableWithoutFeedback, Image } from 'react-native'
 import params from '../params'
 import Mine from './Mine'
 import Flag from './Flag'
@@ -13,19 +13,21 @@ export default props => {
     if (flagged) styleField.push(styles.flagged)
     if (!opened && !exploded) styleField.push(styles.regular)
 
-    let color = null
-    if (nearMines > 0){
-        if (nearMines == 1) color = '#2A28D7'
-        if (nearMines == 2) color = '#2B520F'
-        if (nearMines > 2 && nearMines <6) color = '#F9060A'
-        if (nearMines >= 6) color = '#F221A9'
-    }
-
     return (
         <TouchableWithoutFeedback onPress={props.onOpen} onLongPress={props.onSelect}>
             <View style={styleField}>
-                {!mined && opened && nearMines > 0 ? 
-                    <Text style={[styles.label, { color: color }]}>{nearMines}</Text> : false}
+                {!mined && opened && nearMines == 1 ? 
+                    <Image style={styles.coreMine} source={require(`../Imagens/azul.png`)} /> : false}
+                {!mined && opened && nearMines == 2 ? 
+                    <Image style={styles.coreMine} source={require(`../Imagens/verde.png`)} /> : false}
+                {!mined && opened && nearMines == 3 ? 
+                    <Image style={styles.coreMine} source={require(`../Imagens/amarela.png`)} /> : false}
+                {!mined && opened && nearMines == 4 ? 
+                    <Image style={styles.coreMine} source={require(`../Imagens/laranja.png`)} /> : false}
+                {!mined && opened && nearMines == 5 ? 
+                    <Image style={styles.coreMine} source={require(`../Imagens/vermelho.png`)} /> : false}
+                {!mined && opened && nearMines >= 6 ? 
+                    <Image style={styles.coreMine} source={require(`../Imagens/roxa.png`)} /> : false}
                 {mined && opened ? <Mine /> : false}
                 {flagged && !opened ? <Flag /> : false}
             </View>
@@ -56,8 +58,16 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: params.fontSize,
     },
+    coreMine: {
+        height: 34,
+        width: 34,
+        borderRadius: 10,
+        backgroundColor: 'black',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     exploded: {
-        backgroundColor: 'red',
-        borderColor: 'red',
+        backgroundColor: 'black',
+        borderColor: 'black',
     }
 })

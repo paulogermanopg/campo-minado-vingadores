@@ -4,12 +4,12 @@ import { View, StyleSheet, Image } from 'react-native'
 export default props => {
     return (
         <View style={styles.container}>
-            {/* <Image style={styles.coreMine} source={require('../Imagens/bomba.png')} /> */}
-            <View style={styles.coreMine} />
+            <Image style={styles.coreMine} source={require('../Imagens/snap.jpg')} />
+            {/* <View style={styles.coreMine} />
             <View style={styles.line} />
             <View style={[styles.line, { transform: [{ rotate: '45deg' }] }]} />
             <View style={[styles.line, { transform: [{ rotate: '90deg' }] }]} />
-            <View style={[styles.line, { transform: [{ rotate: '135deg' }] }]} />
+            <View style={[styles.line, { transform: [{ rotate: '135deg' }] }]} /> */}
         </View>
     )
 }
@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     coreMine: {
-        height: 14,
-        width: 14,
+        height: 34,
+        width: 34,
         borderRadius: 10,
         backgroundColor: 'black',
         alignItems: 'center',

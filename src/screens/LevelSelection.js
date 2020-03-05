@@ -8,7 +8,7 @@ export default props => {
             transparent={true}>
             <View style={styles.frame}> 
                 <View style={styles.container}>
-                    <Text style={styles.title}>Selecione o Nível</Text>
+                    <Text style={styles.title}>Dasafio Nível:</Text>
                     <TouchableOpacity style={[styles.button, styles.bgEasy]}
                         onPress={() => props.onLevelSelected(0.1)}>
                         <Text style={styles.buttonLabel}>LOKI</Text>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,0.6)',
     },
     container: {
-       backgroundColor: '#EEE',
+       backgroundColor: 'black',
        alignItems: 'center',
        justifyContent: 'center',
        padding: 15, 
@@ -43,10 +43,12 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 30,
         fontWeight: 'bold',
+        color: '#FFFFFF'
     },
     button: {
         marginTop: 10,
         padding: 5,
+        borderRadius: 10,
     },
     buttonLabel: {
         fontSize: 20,
@@ -57,9 +59,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#49b65d',
     },
     bgNormal: {
-        backgroundColor: '#2765F7',
+        backgroundColor: '#D3D3D3',
     },
     bgHard: {
-        backgroundColor: '#F26337',
+        backgroundColor: '#551A8B',
     }
 })

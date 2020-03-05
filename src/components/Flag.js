@@ -4,7 +4,7 @@ import { View, StyleSheet, Image } from 'react-native'
 export default props => {
     return (
         <View style={styles.container}>
-            <Image style={styles.coreMine} source={require(`../Imagens/logo.png`)} />
+            <Image style={styles.coreMine} source={require(`../Imagens/logoflag.png`)} />
         </View>
     )
 }

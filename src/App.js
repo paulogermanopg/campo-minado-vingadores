@@ -58,6 +58,7 @@ export default class App extends Component {
     
 
     if (won || wonJ) {
+      showMines(board)
       Alert.alert('Parabéns!', 'Você venceu!')
     }
 

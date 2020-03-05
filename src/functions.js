@@ -94,7 +94,7 @@ const showMines = board => fields(board).filter(field => field.mined)
 
 const invertFlag = (board, row, column) => {
     const field = board[row][column]
-    field.flagged = !field.flagged
+    if (!field.opened) field.flagged = !field.flagged
 }
 
 const joia = (board, row, column) => {
@@ -110,7 +110,12 @@ const joia = (board, row, column) => {
 
 const wonGameByJoia = board => {
     const joia1 = fields(board).filter(field => field.joia && field.nearMines == 1).length
-    if (joia1 > 0) {
+    const joia2 = fields(board).filter(field => field.joia && field.nearMines == 2).length
+    const joia3 = fields(board).filter(field => field.joia && field.nearMines == 3).length
+    const joia4 = fields(board).filter(field => field.joia && field.nearMines == 4).length
+    const joia5 = fields(board).filter(field => field.joia && field.nearMines == 5).length
+    const joia6 = fields(board).filter(field => field.joia && field.nearMines >= 6).length
+    if (joia1 > 0 && joia2 > 0 && joia3 > 0 && joia4 > 0 && joia5 > 0 && joia6 > 0) {
         return true
     }
 }

@@ -74,8 +74,10 @@ const styles = StyleSheet.create({
         borderColor: 'black',
     },
     joia: {
-        backgroundColor: '#999',
-        borderColor: '#777',
+        height: 24,
+        width: 24,
+        borderRadius: 10,
+        backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center',
     }

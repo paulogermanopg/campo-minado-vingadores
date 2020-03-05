@@ -89,7 +89,6 @@ const hadExplosion = board => fields(board)
 .filter(field => field.exploded).length > 0
 const pendding = field => (field.mined && !field.flagged) || (!field.mined && !field.opened)
 const wonGame = board => fields(board).filter(pendding).length === 0
-const wonGameByJoia = board => fields(board).filter(pendding).length === 0
 const showMines = board => fields(board).filter(field => field.mined)
     .forEach(field => field.opened = true)
 
@@ -109,7 +108,12 @@ const joia = (board, row, column) => {
     }
 }
 
-const joiasUsed = board => fields(board).filter(field => field.flagged).length
+const wonGameByJoia = board => {
+    const joia1 = fields(board).filter(field => field.joia && field.nearMines == 1).length
+    if (joia1 > 0) {
+        return true
+    }
+}
 
 const flagsUsed = board => fields(board).filter(field => field.flagged).length
 

@@ -54,14 +54,12 @@ export default class App extends Component {
     invertFlag(board, row, column)
     const won = wonGame(board)
     joia(board, row, column)
-    // const wonJ = wonGameByJoia(board)
+    const wonJ = wonGameByJoia(board)
+    
 
-    if (won) {
+    if (won || wonJ) {
       Alert.alert('Parabéns!', 'Você venceu!')
     }
-    // if (wonJ) {
-    //   Alert.alert('Parabéns!', 'Você venceu!')
-    // }
 
     this.setState({ board, won })
   }

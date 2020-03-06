@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Alert, Modal } from 'react-native'
 import LevelSelection from './screens/LevelSelection'
 import Header from './components/Header'
 import params from './params'
+import Options from './screens/Options'
 import Final from './components/final'
 import FinalWin from './components/finalWin'
 import FinalWin2 from './components/finalWin2'
@@ -34,6 +35,7 @@ export default class App extends Component {
       showfinal: false,
       showfinalwin: false,
       showfinalwin2: false,
+      showOptions: false,
     }
   }
 
@@ -88,6 +90,8 @@ export default class App extends Component {
         <LevelSelection isVisible={this.state.showLevelSelection}
           onLevelSelected={this.onLevelSelected}
           onCancel={() => this.setState({ showLevelSelection: false })} />
+        <Options isVisible={this.state.showOptions}
+          onCancel={() => this.setState({ showOptions: false })} />
         <Final isVisible={this.state.showfinal}
           onCancel={() => this.setState({ showfinal: false })} />
         <FinalWin isVisible={this.state.showfinalwin}
@@ -95,7 +99,7 @@ export default class App extends Component {
         <FinalWin2 isVisible={this.state.showfinalwin2}
           onCancel={() => this.setState({ showfinalwin2: false })} />
         <Header flagsLeft={this.minesAmount() - flagsUsed(this.state.board)}
-          onNewGame={() => this.setState(this.createState())} 
+          onNewGame={() => this.setState(this.createState())} onOptions={() => this.setState({ showOptions: true })}
           onFlagPress={() => this.setState({ showLevelSelection: true })}/>
         <View style={styles.board}>
           <MineField board={this.state.board} onOpenField={this.onOpenField} onSelectField={this.onSelectField}/>

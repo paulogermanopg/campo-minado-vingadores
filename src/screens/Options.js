@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, Modal, Image } from 'react-native'
+import { View, Text, StyleSheet, Modal, Image, ScrollView } from 'react-native'
 
 export default props => {
     return (
@@ -7,8 +7,10 @@ export default props => {
             visible={props.isVisible} animationType='slide'
             transparent={true}>
             <View style={styles.frame}> 
-                <Text style={styles.title}>I am IronMan!</Text>
-                <Image style={{width: 300, height: 300 }} source={require(`../Imagens/ironmanwin.gif`)} />
+                <ScrollView>
+                    <Text style={styles.title}>Como o jogo funciona</Text>
+                    <Image style={{width: 300, height: 900 }} source={require(`../Imagens/options.png`)} />
+                </ScrollView>
             </View>
         </Modal>
     )
@@ -19,7 +21,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgba(0,0,0,0.6)',
+        backgroundColor: 'rgba(0,0,0,0.8)',
     },
     container: {
        backgroundColor: 'black',

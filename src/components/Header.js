@@ -11,8 +11,9 @@ export default props => {
                 </TouchableOpacity>
             <Text style={styles.flagsLeft}>{`Snaps!\n`}{props.flagsLeft}</Text>
             </View>
-            <TouchableOpacity style={styles.button} onPress={props.onNewGame}>
+            <TouchableOpacity style={styles.button} onPress={props.onNewGame} onLongPress={props.onOptions}>
                 <Text style={styles.buttonLabel}>END GAME</Text>
+                <Text style={styles.options}>Clique para iniciar{`\n`}Segure para as regras</Text>
             </TouchableOpacity>
             <Text style={styles.pg}>{``}PG®</Text>
         </View>
@@ -49,6 +50,14 @@ const styles = StyleSheet.create({
         paddingTop: 0,
         marginLeft: 0,
         textAlign: 'center'
+    },
+    options: {
+        fontSize: 10,
+        fontWeight: 'bold',
+        paddingTop: 0,
+        marginLeft: 0,
+        textAlign: 'center',
+        color: '#EEE'
     },
     button: {
         backgroundColor: 'black',

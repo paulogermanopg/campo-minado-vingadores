@@ -171,7 +171,13 @@ const joia = (board, row, column) => {
                     marcar[2].flagged = true
                     marcar[3].flagged = true
                     marcar[4].flagged = true
-                    marcar[5].flagged = true
+                    // marcar[5].flagged = true
+                    let m = marcar.length
+                    while (m > 0) {
+                        if (marcar[m-1].flagged == false)
+                        marcar[m-1].mined = false
+                        m -- 
+                    }
                 }
                 else{}
             }

@@ -14,6 +14,7 @@ export default props => {
             <TouchableOpacity style={styles.button} onPress={props.onNewGame}>
                 <Text style={styles.buttonLabel}>END GAME</Text>
             </TouchableOpacity>
+            <Text>{`\n\n\n\n\n\n`}PG</Text>
         </View>
     )
 }

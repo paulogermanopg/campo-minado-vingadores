@@ -1,11 +1,15 @@
 import React from 'react'
-import { View, Text, StyleSheet, Modal } from 'react-native'
+import { View, Text, StyleSheet, Modal, Image } from 'react-native'
 
 export default props => {
     return (
         <Modal onRequestClose={props.onCancel}
             visible={props.isVisible} animationType='slide'
             transparent={true}>
+            <View style={styles.frame}> 
+                <Text style={styles.title}>We're in the End Game now</Text>
+                <Image style={{width: 300, height: 300 }} source={require(`../Imagens/thanosvictory.gif`)} />
+            </View>
         </Modal>
     )
 }
@@ -28,24 +32,5 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: '#FFFFFF'
-    },
-    button: {
-        marginTop: 10,
-        padding: 5,
-        borderRadius: 10,
-    },
-    buttonLabel: {
-        fontSize: 20,
-        color: '#EEE',
-        fontWeight: 'bold',
-    },
-    bgEasy: {
-        backgroundColor: '#49b65d',
-    },
-    bgNormal: {
-        backgroundColor: '#D3D3D3',
-    },
-    bgHard: {
-        backgroundColor: '#551A8B',
     }
 })

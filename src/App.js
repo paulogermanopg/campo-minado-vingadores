@@ -5,6 +5,8 @@ import LevelSelection from './screens/LevelSelection'
 import Header from './components/Header'
 import params from './params'
 import Final from './components/final'
+import FinalWin from './components/finalWin'
+import FinalWin2 from './components/finalWin2'
 import MineField from './components/MineField'
 import { createMineBoard, clonedBoard, openField, hadExplosion, showMines, wonGame, invertFlag, flagsUsed, joia, wonGameByJoia } from './functions'
 
@@ -30,6 +32,8 @@ export default class App extends Component {
       lost: false,
       showLevelSelection: false,
       showfinal: false,
+      showfinalwin: false,
+      showfinalwin2: false,
     }
   }
 
@@ -45,7 +49,7 @@ export default class App extends Component {
     }
 
     if (won) {
-      Alert.alert('Parabéns!', 'Você venceu!')
+      this.setState({ showfinalwin: true })
     }
 
     this.setState({ board, lost, won })
@@ -61,7 +65,12 @@ export default class App extends Component {
 
     if (won || wonJ) {
       showMines(board)
-      Alert.alert('Parabéns!', 'Você venceu!')
+      if (wonJ){
+        this.setState({ showfinalwin2: true })
+      } else {
+        this.setState({ showfinalwin: true })
+      }
+      
     }
 
     this.setState({ board, won })
@@ -80,6 +89,10 @@ export default class App extends Component {
           onCancel={() => this.setState({ showLevelSelection: false })} />
         <Final isVisible={this.state.showfinal}
           onCancel={() => this.setState({ showfinal: false })} />
+        <FinalWin isVisible={this.state.showfinalwin}
+          onCancel={() => this.setState({ showfinalwin: false })} />
+        <FinalWin2 isVisible={this.state.showfinalwin2}
+          onCancel={() => this.setState({ showfinalwin2: false })} />
         <Header flagsLeft={this.minesAmount() - flagsUsed(this.state.board)}
           onNewGame={() => this.setState(this.createState())} 
           onFlagPress={() => this.setState({ showLevelSelection: true })}/>

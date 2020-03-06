@@ -9,7 +9,7 @@ export default props => {
                 <TouchableOpacity onPress={props.onFlagPress} style={styles.flagButton}>
                     <Image style={styles.coreMine} source={require(`../Imagens/logo.png`)} />
                 </TouchableOpacity>
-                <Text style={styles.flagsLeft}>{props.flagsLeft}</Text>
+            <Text style={styles.flagsLeft}>{`Snaps!\n`}{props.flagsLeft}</Text>
             </View>
             <TouchableOpacity style={styles.button} onPress={props.onNewGame}>
                 <Text style={styles.buttonLabel}>END GAME</Text>

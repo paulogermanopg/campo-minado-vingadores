@@ -103,7 +103,34 @@ const joia = (board, row, column) => {
         const neighbors = getNeighbors(board, row, column)
         field.nearMines = neighbors.filter(n => n.mined).length
         if (field.nearMines > 0){
-            field.joia = !field.joia
+            if (field.joia == false){
+                const joia1 = fields(board).filter(field => field.joia && field.nearMines == 1).length
+                const joia2 = fields(board).filter(field => field.joia && field.nearMines == 2).length
+                const joia3 = fields(board).filter(field => field.joia && field.nearMines == 3).length
+                const joia4 = fields(board).filter(field => field.joia && field.nearMines == 4).length
+                const joia5 = fields(board).filter(field => field.joia && field.nearMines == 5).length
+                const joia6 = fields(board).filter(field => field.joia && field.nearMines >= 6).lengt
+                if (field.nearMines == 1 && joia1 == 0){
+                    field.joia = !field.joia
+                }
+                else if (field.nearMines == 2 && joia2 == 0){
+                    field.joia = !field.joia
+                }
+                else if (field.nearMines == 3 && joia3 == 0){
+                    field.joia = !field.joia
+                }
+                else if (field.nearMines == 4 && joia4 == 0){
+                    field.joia = !field.joia
+                }
+                else if (field.nearMines == 5 && joia5 == 0){
+                    field.joia = !field.joia
+                }
+                else if (field.nearMines == 6 && joia6 == 0){
+                    field.joia = !field.joia
+                }
+                else{}
+            }
+            
         }
     }
 }

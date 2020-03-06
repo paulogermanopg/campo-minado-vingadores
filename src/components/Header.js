@@ -14,7 +14,7 @@ export default props => {
             <TouchableOpacity style={styles.button} onPress={props.onNewGame}>
                 <Text style={styles.buttonLabel}>END GAME</Text>
             </TouchableOpacity>
-            <Text>{`\n\n\n\n\n\n`}PG</Text>
+            <Text style={styles.pg}>{``}PG®</Text>
         </View>
     )
 }
@@ -37,10 +37,18 @@ const styles = StyleSheet.create({
         minWidth: 30,
     },
     flagsLeft: {
-        fontSize: 30,
+        fontSize: 20,
         fontWeight: 'bold',
         paddingTop: 5,
         marginLeft: 20,
+        textAlign: 'center'
+    },
+    pg: {
+        fontSize: 10,
+        fontWeight: 'bold',
+        paddingTop: 0,
+        marginLeft: 0,
+        textAlign: 'center'
     },
     button: {
         backgroundColor: 'black',
@@ -48,8 +56,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     coreMine: {
-        height: 84,
-        width: 84,
+        height: 74,
+        width: 74,
         borderRadius: 10,
         //backgroundColor: 'black',
         alignItems: 'center',

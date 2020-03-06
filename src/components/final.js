@@ -29,8 +29,9 @@ const styles = StyleSheet.create({
        borderRadius: 10,
     },
     title: {
-        fontSize: 30,
+        fontSize: 20,
         fontWeight: 'bold',
-        color: '#FFFFFF'
+        color: '#FFFFFF',
+        textAlign: 'center'
     }
 })

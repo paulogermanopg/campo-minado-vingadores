@@ -43,10 +43,10 @@ export default class App extends Component {
     const lost = hadExplosion(board)
     const won = wonGame(board)
 
-    // if (lost) {
-    //   showMines(board)
-    //   this.setState({ showfinal: true })
-    // }
+    if (lost) {
+      showMines(board)
+      this.setState({ showfinal: true })
+    }
 
     if (won) {
       this.setState({ showfinalwin: true })

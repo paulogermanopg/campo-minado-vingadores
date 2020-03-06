@@ -110,12 +110,13 @@ const joia = (board, row, column) => {
                 const joia4 = fields(board).filter(field => field.joia && field.nearMines == 4).length
                 const joia5 = fields(board).filter(field => field.joia && field.nearMines == 5).length
                 const joia6 = fields(board).filter(field => field.joia && field.nearMines >= 6).length
-                if (field.nearMines == 1 && joia1 == 0){
+                if (field.nearMines == 1 && joia1 < 3){
                     field.joia = !field.joia
                     const marcar = neighbors.filter(n => n.mined)
                     marcar[0].flagged = true
+                    
                 }
-                else if (field.nearMines == 2 && joia2 == 0){
+                else if (field.nearMines == 2 && joia2 < 2){
                     field.joia = !field.joia
                     const marcar = neighbors.filter(n => n.mined)
                     marcar[0].flagged = true
@@ -127,6 +128,11 @@ const joia = (board, row, column) => {
                     marcar[0].flagged = true
                     marcar[1].flagged = true
                     marcar[2].flagged = true
+                    let m = marcar.length
+                    while (m > 0) {
+                        marcar[m-1].mined = false
+                        m -- 
+                    }
                 }
                 else if (field.nearMines == 4 && joia4 == 0){
                     field.joia = !field.joia
@@ -135,6 +141,12 @@ const joia = (board, row, column) => {
                     marcar[1].flagged = true
                     marcar[2].flagged = true
                     marcar[3].flagged = true
+                    const marcar_1 = neighbors.filter(n => n.nearMines > 0)
+                    let m = marcar_1.length
+                    while (m > 0) {
+                        marcar_1[m-1].joia = false
+                        m -- 
+                    }
                 }
                 else if (field.nearMines == 5 && joia5 == 0){
                     field.joia = !field.joia
@@ -144,6 +156,12 @@ const joia = (board, row, column) => {
                     marcar[2].flagged = true
                     marcar[3].flagged = true
                     marcar[4].flagged = true
+                    const marcar_1 = neighbors.filter(n => n.nearMines > 0)
+                    let m = marcar_1.length
+                    while (m > 0) {
+                        marcar_1[m-1].opened = false
+                        m -- 
+                    }
                 }
                 else if (field.nearMines >= 6 && joia6 == 0){
                     field.joia = !field.joia

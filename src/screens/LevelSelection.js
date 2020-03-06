@@ -10,7 +10,7 @@ export default props => {
                 <View style={styles.container}>
                     <Text style={styles.title}>Dasafio Nível:</Text>
                     <TouchableOpacity style={[styles.button, styles.bgEasy]}
-                        onPress={() => props.onLevelSelected(0.1)}>
+                        onPress={() => props.onLevelSelected(0.01)}>
                         <Text style={styles.buttonLabel}>LOKI</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.button, styles.bgNormal]}

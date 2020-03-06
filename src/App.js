@@ -58,9 +58,10 @@ export default class App extends Component {
   onSelectField = (row, column) => {
     const board = clonedBoard(this.state.board)
     invertFlag(board, row, column)
-    const won = wonGame(board)
     joia(board, row, column)
     const wonJ = wonGameByJoia(board)
+    const won = wonGame(board)
+    
     
 
     if (won || wonJ) {
